@@ -8,8 +8,14 @@
 - specs/uDOS-Gameplay-Anchors-v1.3-Spec.md
 - specs/v1-3 GAMEPLAY.md
 - howto/build-usb.md
+- howto/quickstart.md
 - howto/dry-run.md
+- howto/dev-workflow.md
 - howto/standalone-release-and-install.md
+- ../LEGAL.md
+- ../CONTRIBUTING.md
+- ../CONTRIBUTORS.md
+- ../CODE_OF_CONDUCT.md
 - ../courses/README.md
 - ../wiki/Home.md
 - devlog/2026-01-24-sonic-standalone-baseline.md
@@ -34,6 +40,10 @@
 - numbered learning-path docs are migration candidates for the new `courses/`
   root rather than long-term canonical reference docs
 - `wiki/` is the student-facing orientation layer
+- `pyproject.toml` plus `installers/setup/` define the current editable install
+  path for Sonic operator entrypoints
+- local `@dev` / binder workflow state is intentionally excluded from tracked
+  repo content; the public repo keeps only reviewed outputs
 
 ## Legacy
 - `specs/sonic-screwdriver-legacy-baseline.md` captures the first standalone planning split.

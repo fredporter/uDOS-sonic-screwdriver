@@ -18,6 +18,19 @@ RaspberryPi/
 TOOLS/
 LOGS/
 
+# Local development lane
+.dev/
+@dev/
+binders/
+.local-extension/
+.local/
+.compost/
+review-staging/
+workspace-state/
+binder-state/
+binder-cache/
+binder-runs/
+
 # Large local media and archives
 *.iso
 *.img.xz
@@ -25,12 +38,22 @@ LOGS/
 *.DS_Store
 **/.archive/
 ISOS/.archive/
+*.local.md
+*.draft.md
+*.scratch.md
+*.temp.md
+.env.local
+.env.dev.local
+*.machine.json
+*.local.json
+*.cache.json
 
 config/sonic-manifest.json
 
 # Python caches
 __pycache__/
 *.py[cod]
+*.egg-info/
 
 # Frontend build state
 apps/sonic-ui/node_modules/

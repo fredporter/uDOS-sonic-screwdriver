@@ -5,6 +5,7 @@ This is the public CLI surface for Sonic.
 Current implementation:
 
 - `apps/sonic-cli/cli.py`
+- installable console entrypoint: `sonic`
 
 Core commands:
 

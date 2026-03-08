@@ -13,6 +13,10 @@ uDOS-sonic/ -- active public/runtime structure
 │   ├── README.md
 │   ├── dualboot/
 │   │   └── README.md
+│   ├── rescue/
+│   │   └── README.md
+│   ├── uhome-bundle/
+│   │   └── README.md
 │   └── usb-installer/
 │       └── README.md
 ├── services/
@@ -52,5 +56,7 @@ uDOS-sonic/ -- active public/runtime structure
 ├── datasets/              -- current device catalog data sources
 ├── distribution/          -- tracked packaging descriptors
 ├── memory/sonic/          -- local runtime state
-├── installers/            -- external bundle namespace boundary only
+├── installers/
+│   ├── bundles/           -- external bundle namespace boundary
+│   └── setup/             -- editable install helpers
 └── payloads/              -- tracked scaffold for payload layout

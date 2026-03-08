@@ -2,7 +2,8 @@
   "id": "uhome-steam-server",
   "name": "uHOME Steam Server Bundle",
   "type": "bundle",
-  "installer_module": "installers.bundles.uhome.installer",
+  "source_repo": "uHOME-server",
+  "installer_module": "uhome_server.sonic.uhome_installer",
   "bundle_manifest": "uhome-bundle.json",
   "launchers": [
     "distribution/launchers/uhome/uhome-console.sh"

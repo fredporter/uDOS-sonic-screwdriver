@@ -52,10 +52,20 @@ work.
 
 ## Quick Start (Linux)
 
+Install editable CLI entrypoints:
+
+```bash
+bash installers/setup/install-sonic-editable.sh
+```
+
+This repo currently supports editable installation from source, not a
+self-contained wheel. That keeps the CLI aligned to the tracked repo assets in
+`config/`, `datasets/`, `distribution/`, and `scripts/`.
+
 Generate a plan:
 
 ```bash
-python3 apps/sonic-cli/cli.py plan \
+sonic plan \
   --usb-device /dev/sdb \
   --out memory/sonic/sonic-manifest.json
 ```
@@ -63,7 +73,7 @@ python3 apps/sonic-cli/cli.py plan \
 Run a dry-run first:
 
 ```bash
-python3 apps/sonic-cli/cli.py plan \
+sonic plan \
   --usb-device /dev/sdb \
   --dry-run \
   --out memory/sonic/sonic-manifest.json
@@ -82,13 +92,13 @@ bash scripts/sonic-stick.sh --manifest memory/sonic/sonic-manifest.json
 Serve the local API:
 
 ```bash
-python3 apps/sonic-cli/cli.py serve-api
+sonic-api
 ```
 
 Serve the MCP facade:
 
 ```bash
-python3 apps/sonic-cli/cli.py serve-mcp
+sonic-mcp
 ```
 
 Run the Linux smoke workflow:
@@ -108,6 +118,9 @@ There are now three ways to enter this repo:
 Use the wiki for orientation, `courses/` for guided learning, and `docs/` for
 implementation details and active contracts.
 
+If you prefer repo-local execution without installing entrypoints, the direct
+CLI path remains `python3 apps/sonic-cli/cli.py`.
+
 ## Current Runtime Layout
 
 The active runtime now aligns to the public repo structure:
@@ -115,6 +128,7 @@ The active runtime now aligns to the public repo structure:
 - `apps/sonic-cli/` = operator CLI
 - `apps/sonic-ui/` = browser UI
 - `services/` = planner, manifest, API, MCP, and runtime service layer
+- `installers/setup/` = editable install helpers
 - `modules/` = install-domain architecture surfaces
 - `vault/` = tracked templates, manifests, and deployment notes for learners
 - `scripts/` = Linux-side execution steps
@@ -145,6 +159,23 @@ The broader Sonic role is deployment infrastructure and portable provisioning.
 - structure assessment: [docs/sonic-structure-assessment-2026-03-08.md](/Users/fredbook/Code/uDOS-sonic/docs/sonic-structure-assessment-2026-03-08.md)
 - USB build how-to: [docs/howto/build-usb.md](/Users/fredbook/Code/uDOS-sonic/docs/howto/build-usb.md)
 - dry-run how-to: [docs/howto/dry-run.md](/Users/fredbook/Code/uDOS-sonic/docs/howto/dry-run.md)
+- quickstart: [docs/howto/quickstart.md](/Users/fredbook/Code/uDOS-sonic/docs/howto/quickstart.md)
+- setup helper: [installers/setup/README.md](/Users/fredbook/Code/uDOS-sonic/installers/setup/README.md)
+
+## Project Governance
+
+- license: [LICENSE](/Users/fredbook/Code/uDOS-sonic/LICENSE)
+- legal summary: [LEGAL.md](/Users/fredbook/Code/uDOS-sonic/LEGAL.md)
+- contributing: [CONTRIBUTING.md](/Users/fredbook/Code/uDOS-sonic/CONTRIBUTING.md)
+- contributors: [CONTRIBUTORS.md](/Users/fredbook/Code/uDOS-sonic/CONTRIBUTORS.md)
+- conduct: [CODE_OF_CONDUCT.md](/Users/fredbook/Code/uDOS-sonic/CODE_OF_CONDUCT.md)
+
+## Development Lane
+
+Sonic uses a local `@dev` / binder-style development lane for in-progress work,
+but this repository remains the curated public output surface. Local binder
+state, scratch material, and review staging are ignored by default so dev-mode
+work does not leak into tracked repo content.
 
 ## OS Support
 

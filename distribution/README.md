@@ -10,3 +10,6 @@ under `memory/sonic/artifacts/`.
 Key subdirectories:
 - `distribution/launchers/` contains launcher source assets staged onto target systems.
 - `distribution/installers/` contains standalone installer descriptors for USB and bundle lanes.
+
+Operator setup helpers live outside this tree under `installers/setup/` because
+they install repo-local entrypoints rather than distribution payloads.

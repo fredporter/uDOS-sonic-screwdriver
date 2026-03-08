@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "udos-sonic"
+version = "1.5.4"
+description = "uDOS-sonic deployment and hardware bootstrap toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Fred Porter" }
+]
+dependencies = []
+
+[project.scripts]
+sonic = "sonic_cli:main"
+sonic-api = "services.http_api:main"
+sonic-mcp = "services.mcp_server:main"
+
+[tool.setuptools]
+py-modules = ["sonic_cli"]
+
+[tool.setuptools.packages.find]
+include = ["services", "installers"]

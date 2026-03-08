@@ -24,4 +24,6 @@ Start here:
 - [overview.md](/Users/fredbook/Code/uDOS-sonic/courses/03-portable-dev-systems/overview.md)
 - [objectives.md](/Users/fredbook/Code/uDOS-sonic/courses/03-portable-dev-systems/objectives.md)
 - [prerequisites.md](/Users/fredbook/Code/uDOS-sonic/courses/03-portable-dev-systems/prerequisites.md)
+- [lessons/01-payloads-and-portable-state.md](/Users/fredbook/Code/uDOS-sonic/courses/03-portable-dev-systems/lessons/01-payloads-and-portable-state.md)
+- [lessons/02-rescue-and-recovery.md](/Users/fredbook/Code/uDOS-sonic/courses/03-portable-dev-systems/lessons/02-rescue-and-recovery.md)
 - [project/README.md](/Users/fredbook/Code/uDOS-sonic/courses/03-portable-dev-systems/project/README.md)

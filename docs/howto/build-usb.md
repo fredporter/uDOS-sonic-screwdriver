@@ -6,9 +6,15 @@ For `uHOME`-specific bundle, preflight, or staged install contracts, use the
 canonical sources in the sibling `uHOME-server` repository. This guide covers
 the Sonic-owned USB planning and execution lane.
 
+Install editable CLI entrypoints first:
+
+```bash
+bash installers/setup/install-sonic-editable.sh
+```
+
 1) Generate manifest (adjust layout via config/sonic-layout.json):
 ```bash
-python3 apps/sonic-cli/cli.py plan \
+sonic plan \
   --usb-device /dev/sdb \
   --layout-file config/sonic-layout.json \
   --out memory/sonic/sonic-manifest.json

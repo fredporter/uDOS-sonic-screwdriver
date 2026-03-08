@@ -24,4 +24,6 @@ Start here:
 - [overview.md](/Users/fredbook/Code/uDOS-sonic/courses/04-infrastructure-deployment/overview.md)
 - [objectives.md](/Users/fredbook/Code/uDOS-sonic/courses/04-infrastructure-deployment/objectives.md)
 - [prerequisites.md](/Users/fredbook/Code/uDOS-sonic/courses/04-infrastructure-deployment/prerequisites.md)
+- [lessons/01-family-boundaries.md](/Users/fredbook/Code/uDOS-sonic/courses/04-infrastructure-deployment/lessons/01-family-boundaries.md)
+- [lessons/02-handoff-and-release-gates.md](/Users/fredbook/Code/uDOS-sonic/courses/04-infrastructure-deployment/lessons/02-handoff-and-release-gates.md)
 - [project/README.md](/Users/fredbook/Code/uDOS-sonic/courses/04-infrastructure-deployment/project/README.md)
