@@ -26,6 +26,7 @@ This is the one canonical Sonic course in this repository.
 1. [Lesson 01 - Framework and Boundaries](lessons/01-framework-and-boundaries.md) — Sonic's role & scope
 2. [Lesson 02 - Layout, Manifest, Dry-Run](lessons/02-layout-manifest-and-dry-run.md) — Safe planning & validation
 3. [Lesson 03 - Apply, Rescue, Handoff](lessons/03-apply-rescue-and-handoff.md) — Execution & recovery
+4. [Lesson 04 - Troubleshooting](lessons/04-troubleshooting.md) — Diagnosis & rescue procedures
 
 **Hands-On Project** (practical experience):
 - [Project Phases](project/PHASES.md) — Three scaffolded project phases
