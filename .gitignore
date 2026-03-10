@@ -54,6 +54,9 @@ config/sonic-manifest.json
 __pycache__/
 *.py[cod]
 *.egg-info/
+build/
+dist/
+*.egg
 
 # Frontend build state
 apps/sonic-ui/node_modules/

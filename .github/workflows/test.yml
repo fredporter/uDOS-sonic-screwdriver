@@ -1,0 +1,115 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test on ${{ matrix.os }} with Python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
+        exclude:
+          # Reduce matrix size - test each Python version on at least one OS
+          - os: windows-latest
+            python-version: '3.9'
+          - os: windows-latest
+            python-version: '3.10'
+          - os: macos-latest
+            python-version: '3.10'
+          - os: macos-latest
+            python-version: '3.11'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools wheel
+        pip install pytest
+
+    - name: Install package
+      run: |
+        pip install -e .
+
+    - name: Run tests
+      run: |
+        python -m pytest tests/ -v --tb=short
+
+    - name: Verify console scripts
+      shell: bash
+      run: |
+        sonic --help
+        sonic plan --help
+        sonic run --help
+        sonic-api --help
+        sonic-mcp --help
+
+  packaging-validation:
+    name: Packaging validation on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.9', '3.13']
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Run packaging validation (Unix)
+      if: runner.os != 'Windows'
+      run: |
+        chmod +x scripts/validate-packaging.sh
+        ./scripts/validate-packaging.sh
+
+    - name: Run packaging validation (Windows)
+      if: runner.os == 'Windows'
+      shell: pwsh
+      run: |
+        .\scripts\validate-packaging.ps1
+
+  lint:
+    name: Lint check
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+        cache: 'pip'
+
+    - name: Install ruff
+      run: |
+        pip install ruff
+
+    - name: Run ruff check
+      run: |
+        ruff check . --exit-zero
+
+    - name: Run ruff format check
+      run: |
+        ruff format --check . --diff --exit-zero
