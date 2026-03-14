@@ -156,9 +156,9 @@ All commits pushed to origin/main. Branch up-to-date with remote.
 
 For future reference, the complete planning package is in:
 
-- `/Users/fredbook/Code/uDOS-sonic/docs/ROADMAP-v1.6.md` — Strategic roadmap
-- `/Users/fredbook/Code/uDOS-sonic/docs/BINDER-BREAKDOWN-v1.6.md` — Task details
-- `/Users/fredbook/Code/uDOS-sonic/docs/DEVELOPMENT-STATUS-v1.6.md` — Status checkpoint
+- `<local-project-root>/uDOS-sonic/docs/ROADMAP-v1.6.md` — Strategic roadmap
+- `<local-project-root>/uDOS-sonic/docs/BINDER-BREAKDOWN-v1.6.md` — Task details
+- `<local-project-root>/uDOS-sonic/docs/DEVELOPMENT-STATUS-v1.6.md` — Status checkpoint
 
 ---
 

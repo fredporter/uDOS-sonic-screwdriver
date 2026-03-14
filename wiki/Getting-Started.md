@@ -11,8 +11,8 @@ If you are new to Sonic, use this order:
 For broader learning beyond Sonic itself, continue into the sibling `uDOS`
 course ladder:
 
-- [uDOS Courses README](/Users/fredbook/Code/uDOS/courses/README.md)
-- [uDOS Education Pathways](/Users/fredbook/Code/uDOS/wiki/Education-Pathways.md)
+- [uDOS Courses README](<local-project-root>/uDOS/courses/README.md)
+- [uDOS Education Pathways](<local-project-root>/uDOS/wiki/Education-Pathways.md)
 
 ## First Practical Habit
 

@@ -22,8 +22,8 @@ The student should come away able to:
 Sonic does not need to duplicate the full `uDOS` education ladder. For broader
 platform learning, continue in the sibling repo:
 
-- [uDOS Courses README](/Users/fredbook/Code/uDOS/courses/README.md)
-- [uDOS Course 00 - Orientation](/Users/fredbook/Code/uDOS/courses/00-orientation/README.md)
-- [uDOS Course 02 - Local-First Development](/Users/fredbook/Code/uDOS/courses/02-local-first-dev/README.md)
-- [uDOS Course 03 - API and Automation](/Users/fredbook/Code/uDOS/courses/03-api-and-automation/README.md)
-- [uDOS Course 05 - Personal Infrastructure](/Users/fredbook/Code/uDOS/courses/05-personal-infrastructure/README.md)
+- [uDOS Courses README](<local-project-root>/uDOS/courses/README.md)
+- [uDOS Course 00 - Orientation](<local-project-root>/uDOS/courses/00-orientation/README.md)
+- [uDOS Course 02 - Local-First Development](<local-project-root>/uDOS/courses/02-local-first-dev/README.md)
+- [uDOS Course 03 - API and Automation](<local-project-root>/uDOS/courses/03-api-and-automation/README.md)
+- [uDOS Course 05 - Personal Infrastructure](<local-project-root>/uDOS/courses/05-personal-infrastructure/README.md)

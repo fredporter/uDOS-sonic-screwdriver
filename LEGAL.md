@@ -7,7 +7,7 @@ This page summarizes the public legal and attribution boundary for
 
 The repository source is licensed under the MIT license.
 
-See [LICENSE](/Users/fredbook/Code/uDOS-sonic/LICENSE).
+See [LICENSE](<local-project-root>/uDOS-sonic/LICENSE).
 
 ## Repo Boundary
 
@@ -49,6 +49,6 @@ Local manifests, logs, device databases, downloads, and staged payloads under
 
 For contribution and participation rules, see:
 
-- [CONTRIBUTING.md](/Users/fredbook/Code/uDOS-sonic/CONTRIBUTING.md)
-- [CONTRIBUTORS.md](/Users/fredbook/Code/uDOS-sonic/CONTRIBUTORS.md)
-- [CODE_OF_CONDUCT.md](/Users/fredbook/Code/uDOS-sonic/CODE_OF_CONDUCT.md)
+- [CONTRIBUTING.md](<local-project-root>/uDOS-sonic/CONTRIBUTING.md)
+- [CONTRIBUTORS.md](<local-project-root>/uDOS-sonic/CONTRIBUTORS.md)
+- [CODE_OF_CONDUCT.md](<local-project-root>/uDOS-sonic/CODE_OF_CONDUCT.md)

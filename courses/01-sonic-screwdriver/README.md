@@ -56,5 +56,5 @@ Continue your progression with advanced Sonic tracks:
 For broader platform learning beyond Sonic, use the sibling `uDOS` course
 ladder:
 
-- [uDOS Courses README](/Users/fredbook/Code/uDOS/courses/README.md)
-- [uDOS Education Pathways](/Users/fredbook/Code/uDOS/wiki/Education-Pathways.md)
+- [uDOS Courses README](<local-project-root>/uDOS/courses/README.md)
+- [uDOS Education Pathways](<local-project-root>/uDOS/wiki/Education-Pathways.md)

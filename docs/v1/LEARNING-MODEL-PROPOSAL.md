@@ -290,7 +290,7 @@ Ready to proceed to Task 1.2:
 
 ## References
 
-- Current course: `/Users/fredbook/Code/uDOS-sonic/courses/01-sonic-screwdriver/`
+- Current course: `<local-project-root>/uDOS-sonic/courses/01-sonic-screwdriver/`
 - Current lessons: `lessons/{01,02,03}-*.md`
 - Related docs: `docs/howto/`, `docs/specs/sonic-screwdriver.md`
 - Roadmap: [docs/ROADMAP-v1.6.md](../ROADMAP-v1.6.md)

@@ -111,9 +111,9 @@ bash scripts/smoke/linux-runtime-smoke.sh
 
 There are now three ways to enter this repo:
 
-- student-facing wiki: [wiki/Home.md](/Users/fredbook/Code/uDOS-sonic/wiki/Home.md)
-- Sonic course: [courses/README.md](/Users/fredbook/Code/uDOS-sonic/courses/README.md)
-- reference docs: [docs/README.md](/Users/fredbook/Code/uDOS-sonic/docs/README.md)
+- student-facing wiki: [wiki/Home.md](<local-project-root>/uDOS-sonic/wiki/Home.md)
+- Sonic course: [courses/README.md](<local-project-root>/uDOS-sonic/courses/README.md)
+- reference docs: [docs/README.md](<local-project-root>/uDOS-sonic/docs/README.md)
 
 Use the wiki for orientation, the Sonic course for the deployment lane, and
 `docs/` for implementation details and active contracts.
@@ -121,8 +121,8 @@ Use the wiki for orientation, the Sonic course for the deployment lane, and
 For broader platform learning, use the sibling `uDOS` course ladder instead of
 duplicating the same pathway structure in Sonic:
 
-- [uDOS Courses README](/Users/fredbook/Code/uDOS/courses/README.md)
-- [uDOS Education Pathways](/Users/fredbook/Code/uDOS/wiki/Education-Pathways.md)
+- [uDOS Courses README](<local-project-root>/uDOS/courses/README.md)
+- [uDOS Education Pathways](<local-project-root>/uDOS/wiki/Education-Pathways.md)
 
 If you prefer repo-local execution without installing entrypoints, the direct
 CLI path remains `python3 apps/sonic-cli/cli.py`.
@@ -145,7 +145,7 @@ The active runtime now aligns to the public repo structure:
 - `tests/` = verification coverage
 
 The earlier structure review is kept as a baseline record in
-[docs/sonic-structure-assessment-2026-03-08.md](/Users/fredbook/Code/uDOS-sonic/docs/sonic-structure-assessment-2026-03-08.md).
+[docs/sonic-structure-assessment-2026-03-08.md](<local-project-root>/uDOS-sonic/docs/sonic-structure-assessment-2026-03-08.md).
 
 ## Current Default Deployment Story
 
@@ -160,21 +160,21 @@ The broader Sonic role is deployment infrastructure and portable provisioning.
 
 ## Key Docs
 
-- provisioning contract: [docs/specs/sonic-screwdriver.md](/Users/fredbook/Code/uDOS-sonic/docs/specs/sonic-screwdriver.md)
-- integration boundary: [docs/integration-spec.md](/Users/fredbook/Code/uDOS-sonic/docs/integration-spec.md)
-- structure assessment: [docs/sonic-structure-assessment-2026-03-08.md](/Users/fredbook/Code/uDOS-sonic/docs/sonic-structure-assessment-2026-03-08.md)
-- USB build how-to: [docs/howto/build-usb.md](/Users/fredbook/Code/uDOS-sonic/docs/howto/build-usb.md)
-- dry-run how-to: [docs/howto/dry-run.md](/Users/fredbook/Code/uDOS-sonic/docs/howto/dry-run.md)
-- quickstart: [docs/howto/quickstart.md](/Users/fredbook/Code/uDOS-sonic/docs/howto/quickstart.md)
-- setup helper: [installers/setup/README.md](/Users/fredbook/Code/uDOS-sonic/installers/setup/README.md)
+- provisioning contract: [docs/specs/sonic-screwdriver.md](<local-project-root>/uDOS-sonic/docs/specs/sonic-screwdriver.md)
+- integration boundary: [docs/integration-spec.md](<local-project-root>/uDOS-sonic/docs/integration-spec.md)
+- structure assessment: [docs/sonic-structure-assessment-2026-03-08.md](<local-project-root>/uDOS-sonic/docs/sonic-structure-assessment-2026-03-08.md)
+- USB build how-to: [docs/howto/build-usb.md](<local-project-root>/uDOS-sonic/docs/howto/build-usb.md)
+- dry-run how-to: [docs/howto/dry-run.md](<local-project-root>/uDOS-sonic/docs/howto/dry-run.md)
+- quickstart: [docs/howto/quickstart.md](<local-project-root>/uDOS-sonic/docs/howto/quickstart.md)
+- setup helper: [installers/setup/README.md](<local-project-root>/uDOS-sonic/installers/setup/README.md)
 
 ## Project Governance
 
-- license: [LICENSE](/Users/fredbook/Code/uDOS-sonic/LICENSE)
-- legal summary: [LEGAL.md](/Users/fredbook/Code/uDOS-sonic/LEGAL.md)
-- contributing: [CONTRIBUTING.md](/Users/fredbook/Code/uDOS-sonic/CONTRIBUTING.md)
-- contributors: [CONTRIBUTORS.md](/Users/fredbook/Code/uDOS-sonic/CONTRIBUTORS.md)
-- conduct: [CODE_OF_CONDUCT.md](/Users/fredbook/Code/uDOS-sonic/CODE_OF_CONDUCT.md)
+- license: [LICENSE](<local-project-root>/uDOS-sonic/LICENSE)
+- legal summary: [LEGAL.md](<local-project-root>/uDOS-sonic/LEGAL.md)
+- contributing: [CONTRIBUTING.md](<local-project-root>/uDOS-sonic/CONTRIBUTING.md)
+- contributors: [CONTRIBUTORS.md](<local-project-root>/uDOS-sonic/CONTRIBUTORS.md)
+- conduct: [CODE_OF_CONDUCT.md](<local-project-root>/uDOS-sonic/CODE_OF_CONDUCT.md)
 
 ## Development Lane
 

@@ -23,9 +23,9 @@ Intended outcome:
 
 Start here:
 
-- [overview.md](/Users/fredbook/Code/uDOS-sonic/courses/02-system-provisioning/overview.md)
-- [objectives.md](/Users/fredbook/Code/uDOS-sonic/courses/02-system-provisioning/objectives.md)
-- [prerequisites.md](/Users/fredbook/Code/uDOS-sonic/courses/02-system-provisioning/prerequisites.md)
-- [lessons/01-runtime-roles.md](/Users/fredbook/Code/uDOS-sonic/courses/02-system-provisioning/lessons/01-runtime-roles.md)
-- [lessons/02-build-and-dry-run.md](/Users/fredbook/Code/uDOS-sonic/courses/02-system-provisioning/lessons/02-build-and-dry-run.md)
-- [project/README.md](/Users/fredbook/Code/uDOS-sonic/courses/02-system-provisioning/project/README.md)
+- [overview.md](<local-project-root>/uDOS-sonic/courses/02-system-provisioning/overview.md)
+- [objectives.md](<local-project-root>/uDOS-sonic/courses/02-system-provisioning/objectives.md)
+- [prerequisites.md](<local-project-root>/uDOS-sonic/courses/02-system-provisioning/prerequisites.md)
+- [lessons/01-runtime-roles.md](<local-project-root>/uDOS-sonic/courses/02-system-provisioning/lessons/01-runtime-roles.md)
+- [lessons/02-build-and-dry-run.md](<local-project-root>/uDOS-sonic/courses/02-system-provisioning/lessons/02-build-and-dry-run.md)
+- [project/README.md](<local-project-root>/uDOS-sonic/courses/02-system-provisioning/project/README.md)

@@ -124,7 +124,7 @@ uDOS-sonic Packaging Validation
 ===============================================
 OS: Darwin
 Python: Python 3.9.6
-Repo: /Users/fredbook/Code/uDOS-sonic
+Repo: <local-project-root>/uDOS-sonic
 Test venv: /tmp/udos-sonic-validation-54449
 ===============================================
 

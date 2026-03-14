@@ -21,8 +21,8 @@ learning still belongs in the sibling `uDOS` repository.
 
 ## Related uDOS Learning
 
-- [uDOS Courses README](/Users/fredbook/Code/uDOS/courses/README.md)
-- [uDOS Education Pathways](/Users/fredbook/Code/uDOS/wiki/Education-Pathways.md)
-- [uDOS Course 00 - Orientation](/Users/fredbook/Code/uDOS/courses/00-orientation/README.md)
-- [uDOS Course 02 - Local-First Development](/Users/fredbook/Code/uDOS/courses/02-local-first-dev/README.md)
-- [uDOS Course 05 - Personal Infrastructure](/Users/fredbook/Code/uDOS/courses/05-personal-infrastructure/README.md)
+- [uDOS Courses README](<local-project-root>/uDOS/courses/README.md)
+- [uDOS Education Pathways](<local-project-root>/uDOS/wiki/Education-Pathways.md)
+- [uDOS Course 00 - Orientation](<local-project-root>/uDOS/courses/00-orientation/README.md)
+- [uDOS Course 02 - Local-First Development](<local-project-root>/uDOS/courses/02-local-first-dev/README.md)
+- [uDOS Course 05 - Personal Infrastructure](<local-project-root>/uDOS/courses/05-personal-infrastructure/README.md)

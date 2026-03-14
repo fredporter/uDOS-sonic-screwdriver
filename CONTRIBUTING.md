@@ -22,9 +22,9 @@ contracts that belong elsewhere, especially `uHOME-server`.
 
 ## Public Governance
 
-- participation rules: [CODE_OF_CONDUCT.md](/Users/fredbook/Code/uDOS-sonic/CODE_OF_CONDUCT.md)
-- contributor record: [CONTRIBUTORS.md](/Users/fredbook/Code/uDOS-sonic/CONTRIBUTORS.md)
-- legal summary: [LEGAL.md](/Users/fredbook/Code/uDOS-sonic/LEGAL.md)
+- participation rules: [CODE_OF_CONDUCT.md](<local-project-root>/uDOS-sonic/CODE_OF_CONDUCT.md)
+- contributor record: [CONTRIBUTORS.md](<local-project-root>/uDOS-sonic/CONTRIBUTORS.md)
+- legal summary: [LEGAL.md](<local-project-root>/uDOS-sonic/LEGAL.md)
 
 ## Local Development Lane
 

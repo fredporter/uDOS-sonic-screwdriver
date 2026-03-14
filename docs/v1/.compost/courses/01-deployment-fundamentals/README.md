@@ -22,10 +22,10 @@ Intended outcome:
 
 Start here:
 
-- [overview.md](/Users/fredbook/Code/uDOS-sonic/courses/01-deployment-fundamentals/overview.md)
-- [objectives.md](/Users/fredbook/Code/uDOS-sonic/courses/01-deployment-fundamentals/objectives.md)
-- [prerequisites.md](/Users/fredbook/Code/uDOS-sonic/courses/01-deployment-fundamentals/prerequisites.md)
-- [lessons/01-sonic-pathway.md](/Users/fredbook/Code/uDOS-sonic/courses/01-deployment-fundamentals/lessons/01-sonic-pathway.md)
-- [lessons/02-usb-layout.md](/Users/fredbook/Code/uDOS-sonic/courses/01-deployment-fundamentals/lessons/02-usb-layout.md)
-- [lessons/03-boot-and-reboot.md](/Users/fredbook/Code/uDOS-sonic/courses/01-deployment-fundamentals/lessons/03-boot-and-reboot.md)
-- [project/README.md](/Users/fredbook/Code/uDOS-sonic/courses/01-deployment-fundamentals/project/README.md)
+- [overview.md](<local-project-root>/uDOS-sonic/courses/01-deployment-fundamentals/overview.md)
+- [objectives.md](<local-project-root>/uDOS-sonic/courses/01-deployment-fundamentals/objectives.md)
+- [prerequisites.md](<local-project-root>/uDOS-sonic/courses/01-deployment-fundamentals/prerequisites.md)
+- [lessons/01-sonic-pathway.md](<local-project-root>/uDOS-sonic/courses/01-deployment-fundamentals/lessons/01-sonic-pathway.md)
+- [lessons/02-usb-layout.md](<local-project-root>/uDOS-sonic/courses/01-deployment-fundamentals/lessons/02-usb-layout.md)
+- [lessons/03-boot-and-reboot.md](<local-project-root>/uDOS-sonic/courses/01-deployment-fundamentals/lessons/03-boot-and-reboot.md)
+- [project/README.md](<local-project-root>/uDOS-sonic/courses/01-deployment-fundamentals/project/README.md)

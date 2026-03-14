@@ -8,5 +8,5 @@ Recommended:
 
 Helpful sibling `uDOS` preparation:
 
-- [uDOS Course 00 - Orientation](/Users/fredbook/Code/uDOS/courses/00-orientation/README.md)
-- [uDOS Course 02 - Local-First Development](/Users/fredbook/Code/uDOS/courses/02-local-first-dev/README.md)
+- [uDOS Course 00 - Orientation](<local-project-root>/uDOS/courses/00-orientation/README.md)
+- [uDOS Course 02 - Local-First Development](<local-project-root>/uDOS/courses/02-local-first-dev/README.md)
