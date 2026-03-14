@@ -120,6 +120,16 @@ There are now three ways to enter this repo:
 Use the wiki for orientation, the Sonic course for the deployment lane, and
 `docs/` for implementation details and active contracts.
 
+## Activation
+
+The v2 repo activation path is documented in `docs/activation.md`.
+
+Run the current repo validation entrypoint with:
+
+```bash
+scripts/run-sonic-checks.sh
+```
+
 For broader platform learning, use the wider uDOS v2 family docs instead of
 duplicating the same pathway structure in Sonic. Start with `uDOS-docs`,
 `uDOS-core`, and `uDOS-wizard`.

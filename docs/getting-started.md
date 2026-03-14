@@ -2,8 +2,10 @@
 
 1. Read `README.md` for the public role of Sonic.
 2. Review `docs/boundary.md` and `docs/architecture.md`.
-3. Use the repo-specific test and release workflows for packaging validation.
-4. Promote public changes through `develop -> main` in line with the family workflow.
+3. Review `docs/activation.md`.
+4. Run `scripts/run-sonic-checks.sh`.
+5. Use the repo-specific test and release workflows for packaging validation.
+6. Promote public changes through `develop -> main` in line with the family workflow.
 
 For deeper deployment material, continue with:
 

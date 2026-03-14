@@ -8,6 +8,7 @@ uDOS-sonic-screwdriver owns packaging, bootstrap, install, update, and managed e
 - `distribution/`, `installers/`, and `payloads/` hold release and install surfaces
 - `modules/` marks extension and boundary lanes
 - `docs/` explains deployment ownership and family alignment
+- `scripts/run-sonic-checks.sh` is the activation validation entrypoint
 
 ## Design Rule
 
