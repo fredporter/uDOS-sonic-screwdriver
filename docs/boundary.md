@@ -18,3 +18,4 @@ See also:
 
 - `REPO_BOUNDARY.md`
 - `UDOS_V2_ALIGNMENT.md`
+- `structure-policy.md`

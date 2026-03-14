@@ -18,3 +18,4 @@ See also:
 - `ARCHITECTURE.md`
 - `DEPLOYMENT_MODEL.md`
 - `REPO_FAMILY.md`
+- `structure-policy.md`
