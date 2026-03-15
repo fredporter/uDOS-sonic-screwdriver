@@ -1,4 +1,4 @@
-# uDOS-sonic-screwdriver
+# sonic-screwdriver
 
 Sonic Screwdriver is the deployment layer of the uDOS v2 architecture.
 
@@ -19,7 +19,7 @@ The current repo split is:
 - `uDOS-core` = deterministic runtime contracts and execution semantics
 - `uDOS-shell` = interactive shell and workspace interaction surfaces
 - `uDOS-wizard` = network, provider, MCP, and assist surfaces
-- `uDOS-sonic-screwdriver` = deployment, provisioning, hardware bootstrap
+- `sonic-screwdriver` = deployment, provisioning, hardware bootstrap
 - `uHOME-server` = canonical `uHOME` runtime, bundle, preflight, and install-plan contracts
 
 For `uHOME`-specific contracts, the source of truth is the sibling

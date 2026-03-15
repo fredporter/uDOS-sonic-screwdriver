@@ -14,7 +14,7 @@ from services.planner import write_plan
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="uDOS-sonic-screwdriver CLI")
+    parser = argparse.ArgumentParser(description="sonic-screwdriver CLI")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     plan_cmd = sub.add_parser("plan", help="Generate ops manifest")
