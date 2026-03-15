@@ -36,5 +36,5 @@ uDOS-dev
 These are commercial products and not part of the public architecture:
 
 omd-mac-osx-app  
-omd-android-app  
-omd-ios-app
+uHOME-app-android  
+uHOME-app-ios
