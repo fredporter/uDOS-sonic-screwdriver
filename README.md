@@ -52,7 +52,27 @@ This repo no longer carries local `uHOME` bundle contract code. Use the sibling
 `uHOME-server` repo directly for `uHOME` bundle, preflight, and install-plan
 work.
 
+## First-Run Preflight (Any OS)
+
+Run the repo preflight entrypoint first:
+
+```bash
+bash scripts/first-run-preflight.sh
+```
+
+This command performs four checks:
+
+- repo validation (`scripts/run-sonic-checks.sh`)
+- v2 canonical root structure check
+- quickstart probe
+  - Linux: CLI `sonic plan --dry-run`
+  - macOS/Windows: API health probe (`/api/sonic/health`)
+- cross-repo `uHOME` contract conformance probe (when sibling repos exist)
+  - `scripts/smoke/uhome-contract-conformance.sh`
+
 ## Quick Start (Linux)
+
+After preflight passes, run the Linux deployment quickstart:
 
 Install editable CLI entrypoints:
 
