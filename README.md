@@ -129,6 +129,55 @@ Run the Linux smoke workflow:
 bash scripts/smoke/linux-runtime-smoke.sh
 ```
 
+## Ubuntu And Ventoy Integration (v2.0.6 Round B)
+
+Sonic now exposes an explicit integration lane for the `uDOS-ubuntu` profile
+and `uDOS-ventoy` boot templates.
+
+Initialize a stick workspace from `uDOS-ventoy` templates:
+
+```bash
+sonic init \
+  --stick-root memory/sonic/artifacts/sonic-stick \
+  --theme modern \
+  --profile udos-ubuntu
+```
+
+Register image metadata and checksum assumptions from the profile manifest:
+
+```bash
+sonic add udos-ubuntu \
+  --stick-root memory/sonic/artifacts/sonic-stick \
+  --image-name udos-ubuntu-22.04.iso \
+  --checksum <sha256>
+```
+
+Refresh boot templates and profile metadata without deleting user images/config:
+
+```bash
+sonic update \
+  --stick-root memory/sonic/artifacts/sonic-stick \
+  --profile udos-ubuntu
+```
+
+Switch the active boot theme:
+
+```bash
+sonic theme retro --stick-root memory/sonic/artifacts/sonic-stick
+```
+
+OS boundary:
+
+- `sonic init` is Linux-only (full creation path)
+- `sonic add`, `sonic update`, and `sonic theme` are Linux/macOS maintenance commands
+- Windows remains unsupported for Sonic build operations
+
+Run the Ubuntu/Ventoy integration smoke workflow (Linux, sibling repos required):
+
+```bash
+bash scripts/smoke/ubuntu-ventoy-integration-smoke.sh
+```
+
 ## Learning Surfaces
 
 There are now three ways to enter this repo:

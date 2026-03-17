@@ -23,10 +23,10 @@ trap cleanup EXIT
 
 cd "${REPO_ROOT}"
 
-echo "[1/4] Repo validation"
+echo "[1/5] Repo validation"
 bash "${SCRIPT_DIR}/run-sonic-checks.sh"
 
-echo "[2/4] v2 structure check"
+echo "[2/5] v2 structure check"
 expected_roots=(
   apps
   build
@@ -67,7 +67,7 @@ fi
 
 echo "v2 structure check passed."
 
-echo "[3/4] Quickstart preflight"
+echo "[3/5] Quickstart preflight"
 os_name="$(uname -s)"
 if [[ "${os_name}" == "Linux" ]]; then
   "${REPO_ROOT}/.venv/bin/sonic" plan \
@@ -108,11 +108,20 @@ PY
   echo "API quickstart preflight passed on http://127.0.0.1:${API_PORT}/api/sonic/health"
 fi
 
-echo "[4/4] uHOME contract conformance"
+echo "[4/5] uHOME contract conformance"
 if [[ -d "${REPO_ROOT}/../uHOME-server" && -d "${REPO_ROOT}/../uDOS-wizard" ]]; then
   bash "${REPO_ROOT}/scripts/smoke/uhome-contract-conformance.sh"
 else
   echo "Skipping uHOME contract conformance check: sibling repos not found at ../uHOME-server and ../uDOS-wizard"
+fi
+
+echo "[5/5] Ubuntu/Ventoy integration smoke"
+if [[ "${os_name}" != "Linux" ]]; then
+  echo "Skipping Ubuntu/Ventoy smoke: Linux required for init flow"
+elif [[ ! -d "${REPO_ROOT}/../uDOS-ventoy" || ! -d "${REPO_ROOT}/../uDOS-ubuntu" ]]; then
+  echo "Skipping Ubuntu/Ventoy smoke: sibling repos not found at ../uDOS-ventoy and ../uDOS-ubuntu"
+else
+  bash "${REPO_ROOT}/scripts/smoke/ubuntu-ventoy-integration-smoke.sh"
 fi
 
 echo "First-run preflight complete."

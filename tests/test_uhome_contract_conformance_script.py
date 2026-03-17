@@ -26,5 +26,12 @@ def test_uhome_contract_conformance_script_targets_expected_family_contracts() -
 def test_first_run_preflight_references_uhome_contract_conformance_script() -> None:
     contents = FIRST_RUN_SCRIPT.read_text(encoding="utf-8")
 
-    assert "[4/4] uHOME contract conformance" in contents
+    assert "[4/5] uHOME contract conformance" in contents
     assert "scripts/smoke/uhome-contract-conformance.sh" in contents
+
+
+def test_first_run_preflight_references_ubuntu_ventoy_smoke_script() -> None:
+    contents = FIRST_RUN_SCRIPT.read_text(encoding="utf-8")
+
+    assert "[5/5] Ubuntu/Ventoy integration smoke" in contents
+    assert "scripts/smoke/ubuntu-ventoy-integration-smoke.sh" in contents

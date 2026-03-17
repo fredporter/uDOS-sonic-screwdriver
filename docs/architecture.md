@@ -9,6 +9,7 @@ uDOS-sonic-screwdriver owns packaging, bootstrap, install, update, and managed e
 - `modules/` marks extension and boundary lanes
 - `docs/` explains deployment ownership and family alignment
 - `scripts/run-sonic-checks.sh` is the activation validation entrypoint
+- `sonic init/add/update/theme` commands integrate `uDOS-ventoy` templates and `uDOS-ubuntu` profile metadata
 
 ## Design Rule
 

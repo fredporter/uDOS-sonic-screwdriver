@@ -70,3 +70,54 @@ def test_plan_command_writes_plan_with_repo_root(monkeypatch, tmp_path: Path, ca
     assert calls["out_path"] == Path("memory/sonic/test-manifest.json")
     assert calls["payload_dir"] == Path("memory/sonic/artifacts/custom")
     assert calls["format_mode"] == "skip"
+
+
+def test_init_command_rejects_non_linux_platform(monkeypatch, capsys) -> None:
+    monkeypatch.setattr(cli, "support_message", lambda: "WARN Linux only")
+    monkeypatch.setattr(cli, "is_supported", lambda: False)
+    monkeypatch.setattr(cli.sys, "argv", ["cli.py", "init"])
+
+    exit_code = cli.main()
+
+    captured = capsys.readouterr()
+    assert exit_code == 1
+    assert "ERROR sonic init requires Linux" in captured.out
+
+
+def test_add_command_runs_on_macos_maintenance_lane(monkeypatch, capsys, tmp_path: Path) -> None:
+    calls: dict[str, object] = {}
+
+    def fake_register(**kwargs: object) -> dict[str, object]:
+        calls.update(kwargs)
+        return {
+            "action": "add",
+            "stick_root": str(tmp_path / "stick"),
+            "changed_files": [str(tmp_path / "stick" / "config" / "profiles" / "udos-ubuntu.json")],
+            "notes": [],
+        }
+
+    monkeypatch.setattr(cli, "detect_platform", lambda: "macos")
+    monkeypatch.setattr(cli, "register_ubuntu_profile", fake_register)
+    monkeypatch.setattr(
+        cli.sys,
+        "argv",
+        [
+            "cli.py",
+            "add",
+            "udos-ubuntu",
+            "--repo-root",
+            str(tmp_path),
+            "--stick-root",
+            "memory/sonic/artifacts/sonic-stick",
+            "--image-name",
+            "udos-ubuntu-22.04.iso",
+        ],
+    )
+
+    exit_code = cli.main()
+
+    captured = capsys.readouterr()
+    assert exit_code == 0
+    assert "Action complete: add" in captured.out
+    assert calls["profile"] == "udos-ubuntu"
+    assert calls["image_name"] == "udos-ubuntu-22.04.iso"

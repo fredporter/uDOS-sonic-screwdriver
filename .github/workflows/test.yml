@@ -89,6 +89,43 @@ jobs:
       run: |
         .\scripts\validate-packaging.ps1
 
+  ubuntu-ventoy-integration-smoke:
+    name: Ubuntu/Ventoy integration smoke
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sonic-screwdriver
+      uses: actions/checkout@v4
+
+    - name: Checkout uDOS-ventoy
+      uses: actions/checkout@v4
+      with:
+        repository: fredporter/uDOS-ventoy
+        path: uDOS-ventoy
+
+    - name: Checkout uDOS-ubuntu
+      uses: actions/checkout@v4
+      with:
+        repository: fredporter/uDOS-ubuntu
+        path: uDOS-ubuntu
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+        cache: 'pip'
+
+    - name: Install Sonic dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools wheel
+        pip install -e '.[dev]'
+
+    - name: Run Ubuntu/Ventoy integration smoke
+      env:
+        SONIC_VENTOY_REPO: ${{ github.workspace }}/uDOS-ventoy
+        SONIC_UBUNTU_REPO: ${{ github.workspace }}/uDOS-ubuntu
+      run: |
+        bash scripts/smoke/ubuntu-ventoy-integration-smoke.sh
+
   lint:
     name: Lint check
     runs-on: ubuntu-latest
