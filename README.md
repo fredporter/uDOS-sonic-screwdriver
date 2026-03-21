@@ -199,6 +199,12 @@ Run the current repo validation entrypoint with:
 scripts/run-sonic-checks.sh
 ```
 
+Run the current ThinUI NES launcher demo with:
+
+```bash
+bash scripts/demo-thinui-launch.sh
+```
+
 For broader platform learning, use the wider uDOS v2 family docs instead of
 duplicating the same pathway structure in Sonic. Start with `uDOS-docs`,
 `uDOS-core`, and `uDOS-wizard`.

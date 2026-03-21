@@ -34,6 +34,7 @@ Enable Sonic utility/kiosk launch surfaces to invoke ThinUI using a stable launc
 
 ```bash
 bash scripts/run-sonic-checks.sh
+bash scripts/demo-thinui-launch.sh
 ```
 
 ## Boundary Rules
@@ -42,3 +43,8 @@ bash scripts/run-sonic-checks.sh
 - ThinUI owns render loop behavior.
 - Themes own visual tokens and adapter output.
 - Core owns semantic state and command authority.
+
+## Demo Entry
+
+- `scripts/demo-thinui-launch.sh`
+- theme target: `thinui-nes-sonic`
