@@ -21,6 +21,7 @@ deployment and packaging owner without broadening its ownership beyond:
 - `tests/` as the packaging and smoke validation lane
 - `scripts/run-sonic-checks.sh` as the repo validation entrypoint
 - `examples/basic-sonic-session.md` as the smallest operator walkthrough
+- `docs/thin-gui-launcher-integration.md` as the v2.1 ThinUI launcher handoff lane
 
 ## Current Validation Contract
 
@@ -44,3 +45,12 @@ This activation does not move ownership into Sonic for:
 - persistent local-service ownership
 - provider and MCP control-plane ownership outside Sonic's deployment facade
 - private OMD product behavior
+
+## v2.1 Thin GUI Integration
+
+Sonic Thin GUI launcher integration is documented in:
+
+- `docs/thin-gui-launcher-integration.md`
+
+This preserves Sonic launch orchestration ownership while keeping render
+authority in ThinUI/Themes and semantic state authority in Core.
