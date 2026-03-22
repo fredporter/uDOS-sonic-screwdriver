@@ -15,9 +15,7 @@ Educational role:
 ## Dev
 
 ```bash
-python3 ../sonic-cli/cli.py serve-api
-npm install
-npm run dev
+sonic start
 ```
 
 ## Build

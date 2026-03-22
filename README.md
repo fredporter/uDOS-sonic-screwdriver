@@ -71,6 +71,42 @@ This command performs four checks:
 - cross-repo `uHOME` contract conformance probe (when sibling repos exist)
   - `scripts/smoke/uhome-contract-conformance.sh`
 
+## Starter CLI
+
+Sonic now starts from the CLI surface first, then hands off to the browser GUI.
+
+Run the installable starter CLI with:
+
+```bash
+sonic
+```
+
+Starter commands:
+
+- `help`
+- `commands`
+- `start`
+- `status`
+- `test`
+- `doctor`
+- `exit`
+
+GUI handoff:
+
+```bash
+sonic start
+```
+
+That bootstraps the local API and browser UI, then opens the Sonic surface on
+`http://127.0.0.1:5173`.
+
+One-command macOS/bootstrap launcher:
+
+```bash
+bash scripts/first-run-launch.sh
+open ./scripts/first-run-launch.command
+```
+
 ## Quick Start (Linux)
 
 After preflight passes, run the Linux deployment quickstart:
@@ -112,13 +148,13 @@ Apply the manifest:
 bash scripts/sonic-stick.sh --manifest memory/sonic/sonic-manifest.json
 ```
 
-Serve the local API:
+Serve the local API directly:
 
 ```bash
 sonic-api
 ```
 
-Serve the MCP facade:
+Serve the MCP facade directly:
 
 ```bash
 sonic-mcp
@@ -217,7 +253,8 @@ duplicating the same pathway structure in Sonic. Start with `uDOS-docs`,
 `uDOS-core`, and `uDOS-wizard`.
 
 If you prefer repo-local execution without installing entrypoints, the direct
-CLI path remains `python3 apps/sonic-cli/cli.py`.
+CLI path remains `python3 apps/sonic-cli/cli.py`, and the starter launch path is
+`python3 apps/sonic-cli/cli.py start`.
 
 ## Current Runtime Layout
 

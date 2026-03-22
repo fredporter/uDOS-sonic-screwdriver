@@ -1,26 +1,38 @@
 # Lesson 04 - Packaging, Distribution, and Compatibility Policy
 
-Status: Outline stub
+Status: Active
 
 ## Why This Lesson Exists
 
 Good extension code still fails adoption if packaging and compatibility promises
 are vague. This lesson sets expectations for versioning and distribution.
 
-## Planned Sections
+## Packaging Rules
 
-- packaging surfaces and import stability commitments
-- semantic versioning policy for extension-facing changes
-- release note templates for extension consumers
-- deprecation windows and migration guidance
+- package names, install locations, and runtime entrypoints must stay explicit
+- extension-facing artifact changes need an upgrade note, not just a version bump
+- distribution metadata should tell operators which base surfaces are required
 
-## Planned Hands-On
+## Compatibility Policy Frame
+
+- define which inputs, outputs, and commands are stable
+- tie versioning policy to user-visible compatibility, not only internal code
+- announce deprecations with a stated removal window
+- provide migration notes whenever an extension-facing surface changes
+
+## Distribution Notes
+
+- include install and rollback instructions with distributed artifacts
+- note environment prerequisites that affect extension behavior
+- publish compatibility statements beside the package, not only in source docs
+
+## Hands-On
 
 - write a compatibility policy draft for one extension
 - create a release note skeleton with upgrade notes
 - define a deprecation timeline for a hypothetical change
 
-## Planned Outputs
+## Recommended Outputs
 
 - `compatibility-policy.md`
 - `extension-release-notes-template.md`

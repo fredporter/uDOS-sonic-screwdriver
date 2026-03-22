@@ -1,9 +1,13 @@
 # Sonic Course 03 - Extension and Customization
 
-Status: Outline stub for Task 1.5 (`#binder/sonic-education-pathway`)
+Status: Active
 
 Course 03 teaches how to extend Sonic safely without breaking repository
 boundaries, API contracts, or release workflows.
+
+The course is written as an operator-to-maintainer transition lane. It focuses
+on bounded extension work: adding hooks, services, and packages without
+silently changing ownership or compatibility guarantees.
 
 ## Purpose
 

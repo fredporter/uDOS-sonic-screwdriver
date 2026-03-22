@@ -121,3 +121,30 @@ def test_add_command_runs_on_macos_maintenance_lane(monkeypatch, capsys, tmp_pat
     assert "Action complete: add" in captured.out
     assert calls["profile"] == "udos-ubuntu"
     assert calls["image_name"] == "udos-ubuntu-22.04.iso"
+
+
+def test_no_args_prints_starter_help_when_not_interactive(monkeypatch, capsys) -> None:
+    monkeypatch.setattr(cli.sys.stdin, "isatty", lambda: False)
+    monkeypatch.setattr(cli.sys, "argv", ["cli.py"])
+
+    exit_code = cli.main()
+
+    captured = capsys.readouterr()
+    assert exit_code == 0
+    assert "Welcome to Sonic" in captured.out
+    assert "sonic start" in captured.out
+
+
+def test_start_command_delegates_to_first_run_launcher(monkeypatch, tmp_path: Path) -> None:
+    launcher = tmp_path / "scripts" / "first-run-launch.sh"
+    launcher.parent.mkdir(parents=True)
+    launcher.write_text("#!/usr/bin/env bash\n", encoding="utf-8")
+    calls: list[list[str]] = []
+
+    monkeypatch.setattr(cli.sys, "argv", ["cli.py", "start"])
+    monkeypatch.setattr(cli.subprocess, "call", lambda cmd: calls.append(cmd) or 0)
+
+    exit_code = cli._dispatch(["start"], tmp_path)
+
+    assert exit_code == 0
+    assert calls == [["bash", str(launcher)]]

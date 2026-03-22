@@ -4,12 +4,13 @@
 2. Review `docs/boundary.md` and `docs/architecture.md`.
 3. Review `docs/activation.md`.
 4. Run `scripts/first-run-preflight.sh`.
-5. Use the repo-specific test and release workflows for packaging validation.
-6. Promote public changes through `develop -> main` in line with the family workflow.
-7. For v2.0.6 Ubuntu/Ventoy wiring, use `sonic init`, `sonic add`, `sonic update`, and `sonic theme`.
-8. On Linux, run `scripts/smoke/ubuntu-ventoy-integration-smoke.sh` to verify end-to-end template/profile wiring.
-9. For v2.1 Thin GUI launcher handoff, review `docs/thin-gui-launcher-integration.md`.
-10. For v2.3 productization, review `docs/LIVE_INSTALL_RECOVERY_PRODUCT.md` and run `bash scripts/demo-live-install-recovery.sh`.
+5. Start the Sonic CLI with `sonic` and use `start` to launch the ThinUI/browser surface.
+6. Use the repo-specific test and release workflows for packaging validation.
+7. Promote public changes through `develop -> main` in line with the family workflow.
+8. For v2.0.6 Ubuntu/Ventoy wiring, use `sonic init`, `sonic add`, `sonic update`, and `sonic theme`.
+9. On Linux, run `scripts/smoke/ubuntu-ventoy-integration-smoke.sh` to verify end-to-end template/profile wiring.
+10. For v2.1 Thin GUI launcher handoff, review `docs/thin-gui-launcher-integration.md`.
+11. For v2.3 productization, review `docs/LIVE_INSTALL_RECOVERY_PRODUCT.md` and run `bash scripts/demo-live-install-recovery.sh`.
 
 For deeper deployment material, continue with:
 
