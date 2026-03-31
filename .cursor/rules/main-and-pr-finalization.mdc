@@ -1,0 +1,10 @@
+---
+description: Main-only workflow and PR finalisation for sonic-screwdriver
+alwaysApply: true
+---
+
+# Main line and pull requests
+
+- **`main`** is the integration branch. Merge completed work into **`main`** and delete short-lived topic branches after merge.
+- Open a **PR into `main`** when GitHub branch protection requires it; keep branches short-lived.
+- For family-wide policy and PR checklists, see the **`uDOS-dev`** repo: `docs/pr-checklist.md` and `.cursor/rules/main-and-pr-finalization.mdc` (when that repo is in the workspace).
