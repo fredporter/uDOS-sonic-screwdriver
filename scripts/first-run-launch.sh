@@ -7,7 +7,7 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 RUN_DIR="${REPO_ROOT}/.run"
 SHARED_PYTHON_BIN="${UDOS_SHARED_PYTHON_BIN:-}"
 USE_SHARED_RESOURCES="${UDOS_USE_SHARED_RESOURCES:-1}"
-VENV_DIR="${REPO_ROOT}/.venv"
+VENV_DIR="${UDOS_VENV_DIR:-$HOME/.udos/venv/sonic-screwdriver}"
 PYTHON_BIN="${VENV_DIR}/bin/python"
 SONIC_BIN="${VENV_DIR}/bin/sonic"
 API_BIN="${VENV_DIR}/bin/sonic-api"
@@ -76,6 +76,7 @@ require_cmd npm
 require_cmd bash
 
 mkdir -p "${RUN_DIR}"
+mkdir -p "${VENV_DIR}"
 cd "${REPO_ROOT}"
 
 if [[ "${USE_SHARED_RESOURCES}" == "1" && -z "${SHARED_PYTHON_BIN}" ]]; then

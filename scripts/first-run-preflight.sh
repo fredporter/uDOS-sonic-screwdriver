@@ -6,9 +6,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 SHARED_PYTHON_BIN="${UDOS_SHARED_PYTHON_BIN:-}"
 USE_SHARED_RESOURCES="${UDOS_USE_SHARED_RESOURCES:-1}"
-VENV_PYTHON="${REPO_ROOT}/.venv/bin/python"
-SONIC_BIN="${REPO_ROOT}/.venv/bin/sonic"
-SONIC_API_BIN="${REPO_ROOT}/.venv/bin/sonic-api"
+VENV_DIR="${UDOS_VENV_DIR:-$HOME/.udos/venv/sonic-screwdriver}"
+VENV_PYTHON="${VENV_DIR}/bin/python"
+SONIC_BIN="${VENV_DIR}/bin/sonic"
+SONIC_API_BIN="${VENV_DIR}/bin/sonic-api"
 API_PORT="${SONIC_FIRST_RUN_PORT:-8991}"
 API_PID=""
 API_LOG=""
@@ -26,6 +27,7 @@ cleanup() {
 trap cleanup EXIT
 
 cd "${REPO_ROOT}"
+mkdir -p "${VENV_DIR}"
 
 if [[ "${USE_SHARED_RESOURCES}" == "1" && -z "${SHARED_PYTHON_BIN}" ]]; then
   FAMILY_HELPER="${REPO_ROOT}/../scripts/lib/family-python.sh"

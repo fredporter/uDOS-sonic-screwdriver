@@ -12,13 +12,13 @@ scripts/run-sonic-checks.sh
 ## Install Editable Entrypoints
 
 ```bash
-.venv/bin/python -m pip install -e .[dev]
+~/.udos/venv/sonic-screwdriver/bin/python -m pip install -e .[dev]
 ```
 
 ## Generate A Dry-Run Plan
 
 ```bash
-.venv/bin/sonic plan \
+~/.udos/venv/sonic-screwdriver/bin/sonic plan \
   --usb-device /dev/sdb \
   --dry-run \
   --out memory/sonic/sonic-manifest.json

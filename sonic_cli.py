@@ -21,6 +21,10 @@ from services.sonic_stick_integration import (
 )
 
 
+def _sonic_venv_root() -> Path:
+    return Path.home() / ".udos" / "venv" / "sonic-screwdriver"
+
+
 def _print_integration_result(result: dict) -> None:
     print(f"Action complete: {result.get('action')}")
     print(f"Stick root: {result.get('stick_root')}")
@@ -148,11 +152,12 @@ def _print_help_topic(topic: str | None) -> None:
 
 
 def _print_status(repo_root: Path) -> None:
+    venv_root = _sonic_venv_root()
     print("Sonic Status")
     print("")
     print(f"Repo Root: {repo_root}")
-    print(f"Python Venv: {'ready' if (repo_root / '.venv' / 'bin' / 'python').exists() else 'missing'}")
-    print(f"Sonic API Entrypoint: {'ready' if (repo_root / '.venv' / 'bin' / 'sonic-api').exists() else 'missing'}")
+    print(f"Python Venv: {'ready' if (venv_root / 'bin' / 'python').exists() else 'missing'}")
+    print(f"Sonic API Entrypoint: {'ready' if (venv_root / 'bin' / 'sonic-api').exists() else 'missing'}")
     print(f"Sonic UI Deps: {'ready' if (repo_root / 'apps' / 'sonic-ui' / 'node_modules').exists() else 'missing'}")
     print(f"ThinUI Sibling: {'available' if (repo_root.parent / 'uDOS-thinui').exists() else 'missing'}")
     print(f"Launcher Script: {'ready' if (repo_root / 'scripts' / 'first-run-launch.sh').exists() else 'missing'}")

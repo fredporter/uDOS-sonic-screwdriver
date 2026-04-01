@@ -6,10 +6,11 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SHARED_PYTHON_BIN="${UDOS_SHARED_PYTHON_BIN:-}"
 USE_SHARED_RESOURCES="${UDOS_USE_SHARED_RESOURCES:-1}"
-VENV_DIR="$REPO_ROOT/.venv"
+VENV_DIR="${UDOS_VENV_DIR:-$HOME/.udos/venv/sonic-screwdriver}"
 PYTHON_BIN="$VENV_DIR/bin/python"
 
 cd "$REPO_ROOT"
+mkdir -p "$VENV_DIR"
 
 if [ "$USE_SHARED_RESOURCES" = "1" ] && [ -z "$SHARED_PYTHON_BIN" ]; then
   FAMILY_HELPER="$REPO_ROOT/../scripts/lib/family-python.sh"

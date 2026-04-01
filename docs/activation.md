@@ -35,7 +35,7 @@ scripts/run-sonic-checks.sh
 
 This command:
 
-- bootstraps a local `.venv` only when needed
+- bootstraps a local `~/.udos/venv/sonic-screwdriver` runtime only when needed
 - installs the editable Sonic package with test dependencies
 - runs the current packaging, launcher, service, and smoke-path tests
 

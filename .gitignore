@@ -57,6 +57,8 @@ __pycache__/
 build/
 dist/
 *.egg
+.venv/
+venv/
 
 # Frontend build state
 apps/sonic-ui/node_modules/

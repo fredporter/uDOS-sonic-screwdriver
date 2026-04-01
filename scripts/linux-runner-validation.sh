@@ -7,7 +7,8 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 REPO_PARENT="$(cd "${REPO_ROOT}/.." && pwd)"
 SHARED_PYTHON_BIN="${UDOS_SHARED_PYTHON_BIN:-}"
 USE_SHARED_RESOURCES="${UDOS_USE_SHARED_RESOURCES:-1}"
-SONIC_BIN="${REPO_ROOT}/.venv/bin/sonic"
+VENV_DIR="${UDOS_VENV_DIR:-$HOME/.udos/venv/sonic-screwdriver}"
+SONIC_BIN="${VENV_DIR}/bin/sonic"
 
 DRY_RUN_MANIFEST="${SONIC_LINUX_DRY_RUN_MANIFEST:-/tmp/sonic-linux-dry-run.json}"
 TARGET_USB="${SONIC_TARGET_USB:-}"
@@ -73,6 +74,8 @@ if [[ "$(uname -s)" != "Linux" ]]; then
   echo "ERROR This script must run on Linux." >&2
   exit 1
 fi
+
+mkdir -p "${VENV_DIR}"
 
 if [[ "${USE_SHARED_RESOURCES}" == "1" && -z "${SHARED_PYTHON_BIN}" ]]; then
   FAMILY_HELPER="${REPO_ROOT}/../scripts/lib/family-python.sh"
