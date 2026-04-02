@@ -130,7 +130,7 @@ def _print_help_topic(topic: str | None) -> None:
         print("")
         print("Launch the Sonic GUI lane.")
         print("`start`, `start thinui`, and `start gui` all bootstrap the local API and browser UI.")
-        print("This delegates to scripts/first-run-launch.sh.")
+        print("This delegates to scripts/sonic-open.sh.")
         return
     if topic == "status":
         print("status")
@@ -160,7 +160,9 @@ def _print_status(repo_root: Path) -> None:
     print(f"Sonic API Entrypoint: {'ready' if (venv_root / 'bin' / 'sonic-api').exists() else 'missing'}")
     print(f"Sonic UI Deps: {'ready' if (repo_root / 'apps' / 'sonic-ui' / 'node_modules').exists() else 'missing'}")
     print(f"ThinUI Sibling: {'available' if (repo_root.parent / 'uDOS-thinui').exists() else 'missing'}")
-    print(f"Launcher Script: {'ready' if (repo_root / 'scripts' / 'first-run-launch.sh').exists() else 'missing'}")
+    print(
+        f"Launcher Script: {'ready' if (repo_root / 'scripts' / 'sonic-open.sh').exists() else 'missing'}"
+    )
 
 
 def _run_doctor(repo_root: Path) -> int:
@@ -182,7 +184,8 @@ def _run_doctor(repo_root: Path) -> int:
             failed = True
     metadata_checks = (
         ("apps/sonic-ui/package.json", repo_root / "apps" / "sonic-ui" / "package.json"),
-        ("scripts/first-run-launch.sh", repo_root / "scripts" / "first-run-launch.sh"),
+        ("scripts/sonic-open.sh", repo_root / "scripts" / "sonic-open.sh"),
+        ("scripts/first-run-launch.sh (compat)", repo_root / "scripts" / "first-run-launch.sh"),
     )
     for label, path in metadata_checks:
         if path.exists():
@@ -219,7 +222,7 @@ def _run_test(repo_root: Path, target: str | None) -> int:
 
 
 def _launch_gui(repo_root: Path) -> int:
-    launcher = repo_root / "scripts" / "first-run-launch.sh"
+    launcher = repo_root / "scripts" / "sonic-open.sh"
     if not launcher.exists():
         print(f"ERROR Missing launcher: {launcher}")
         return 1

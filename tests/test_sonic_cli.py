@@ -169,8 +169,8 @@ def test_no_args_prints_starter_help_when_not_interactive(monkeypatch, capsys) -
     assert "sonic start" in captured.out
 
 
-def test_start_command_delegates_to_first_run_launcher(monkeypatch, tmp_path: Path) -> None:
-    launcher = tmp_path / "scripts" / "first-run-launch.sh"
+def test_start_command_delegates_to_sonic_open_launcher(monkeypatch, tmp_path: Path) -> None:
+    launcher = tmp_path / "scripts" / "sonic-open.sh"
     launcher.parent.mkdir(parents=True)
     launcher.write_text("#!/usr/bin/env bash\n", encoding="utf-8")
     calls: list[list[str]] = []

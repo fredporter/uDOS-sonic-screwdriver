@@ -123,12 +123,20 @@ sonic start
 That bootstraps the local API and browser UI, then opens the Sonic surface on
 `http://127.0.0.1:5173`.
 
-One-command macOS/bootstrap launcher:
+One-command bootstrap launcher (installs deps on first run, then starts API + UI):
 
 ```bash
-bash scripts/first-run-launch.sh
-open ./scripts/first-run-launch.command
+./sonic-open
+# or: bash scripts/sonic-open.sh
 ```
+
+macOS (Finder): double-click `scripts/sonic-open.command` (or the legacy
+`scripts/first-run-launch.command`, which calls the same flow).
+
+Use `bash scripts/sonic-open.sh --repair` to force reinstall of pip/npm deps.
+Use `--no-open` to skip opening a browser.
+
+Short operator-only walkthrough: [docs/operator-quickstart.md](docs/operator-quickstart.md).
 
 ## Quick Start (Linux)
 

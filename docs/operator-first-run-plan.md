@@ -22,7 +22,7 @@ Non-goals for this pass: replacing Linux-only USB apply flows; running full `pyt
 ## What already exists (reuse, don’t rewrite blindly)
 
 - **`scripts/first-run-launch.sh`** — Already: creates/uses **`~/.udos/venv/sonic-screwdriver`**, `pip install -e '.[dev]'`, `npm install` in `apps/sonic-ui`, starts **sonic-api**, **waits on `/api/sonic/health`**, starts **Vite** UI, **waits on UI port**, **opens browser**. This is the core **installer + launcher + health gate**; it is just **not marketed** as the one true path and it **hard-fails** if `node`/`npm` are missing without friendly guidance.
-- **`apps/sonic-cli/cli.py`** — **`start`** → delegates to `first-run-launch.sh`; **`doctor`** → environment/repo checks — but **`sonic`** must already be on PATH (venv/chicken-and-egg).
+- **`apps/sonic-cli/cli.py`** — **`start`** → delegates to **`scripts/sonic-open.sh`**; **`doctor`** → environment/repo checks — but **`sonic`** must already be on PATH (venv/chicken-and-egg).
 - **`scripts/first-run-preflight.sh`** — Valuable for **CI / developers** (pytest, structure, optional sibling smokes); **too heavy** as the default “first open” for casual operators.
 
 ## Proposed operator model
@@ -68,8 +68,8 @@ Non-goals for this pass: replacing Linux-only USB apply flows; running full `pyt
 
 | Phase | Deliverable |
 | --- | --- |
-| **A** | Add **`scripts/sonic-open.sh`** = current `first-run-launch.sh` + friendlier requirement checks + **setup marker** + unified stdout messages. Add repo-root **`sonic-open`**. README “Start here” box. |
-| **B** | Wire **`sonic start`** / CLI to call **`sonic-open.sh`** only (one implementation). Deprecate duplicate paths in docs. |
+| **A** | Add **`scripts/sonic-open.sh`** = current `first-run-launch.sh` + friendlier requirement checks + **setup marker** + unified stdout messages. Add repo-root **`sonic-open`**. README “Start here” box. **Done** (includes **`scripts/sonic-open.command`** for macOS Finder). |
+| **B** | Wire **`sonic start`** / CLI to call **`sonic-open.sh`** only (one implementation). Deprecate duplicate paths in docs. **Done** (`first-run-launch.sh` is a thin compat wrapper). |
 | **C** | **`doctor`** improvements: same requirement checks as `sonic-open` so `sonic doctor` and launcher stay consistent. |
 | **D** | Optional: detect outdated venv (hash `pyproject.toml` / `package-lock`) and suggest `--repair`. |
 
@@ -82,6 +82,6 @@ Non-goals for this pass: replacing Linux-only USB apply flows; running full `pyt
 
 ## Related
 
-- `scripts/first-run-launch.sh` — current implementation baseline  
+- `scripts/sonic-open.sh` — canonical operator launcher (+ `first-run-launch.sh` compat wrapper)  
 - `scripts/first-run-preflight.sh` — deep validation (not default operator path)  
 - `uDOS-dev/docs/foundation-distribution.md` — family install order around Sonic
