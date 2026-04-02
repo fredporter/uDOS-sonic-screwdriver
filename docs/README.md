@@ -21,6 +21,7 @@ Install and distribution topology (paths, `~/.udos/`, Sonic/Ventoy vs host):
 
 ## Current v2 Docs
 
+- [sonic-tui-charter.md](sonic-tui-charter.md) — **TUI-only utility boundary** (browser GUI out of scope; aligns with uDOS ThinUI)
 - [architecture.md](architecture.md)
 - [boundary.md](boundary.md)
 - [getting-started.md](getting-started.md)
