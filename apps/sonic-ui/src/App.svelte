@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
 
-  let ready = false;
   let loading = true;
   let loadError = "";
   let summary = null;
@@ -31,25 +30,37 @@
   }
 
   onMount(() => {
-    ready = true;
     load();
   });
 </script>
 
-<main class={`min-h-screen px-6 pb-20 pt-10 transition-all duration-700 ${ready ? "opacity-100" : "opacity-0"}`}>
+<!-- Keep the shell visible on first paint (no opacity-0 gate). A blank dark page looked broken to new users. -->
+<main class="min-h-screen px-6 pb-20 pt-10">
   <section class="mx-auto flex max-w-6xl flex-col gap-8">
     <header class="flex flex-col gap-4">
-      <div class="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-neon-blue">
+      <div class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.3em] text-neon-blue">
         <span class="h-[1px] w-10 bg-neon-blue"></span>
-        sonic-screwdriver
+        <span>sonic-screwdriver</span>
+        <span class="rounded-full border border-white/15 px-2 py-0.5 text-[10px] normal-case tracking-normal text-slate-300">
+          {#if loading}
+            Connecting to local API…
+          {:else if loadError}
+            API offline — see banner below
+          {:else}
+            Connected
+          {/if}
+        </span>
       </div>
       <div class="flex flex-col gap-3">
         <h1 class="text-4xl font-semibold text-white md:text-5xl">
           {summary?.headline ?? "Standalone deployment system for uDOS and profile-aware hardware installs."}
         </h1>
         <p class="max-w-2xl text-sm text-slate-300 md:text-base">
-          API-first Sonic control surface with a live browser GUI, manifest validation, and an
-          optional MCP facade for operators and agents.
+          Browser control surface for the local Sonic API (this is not a terminal UI). Use
+          <code class="rounded bg-white/10 px-1.5 py-0.5 font-mono text-xs text-neon-blue">sonic</code>
+          in a terminal for CLI workflows. If this page stays empty, confirm the API is running on port
+          <span class="font-mono text-slate-200">8991</span> and that you opened this tab via the dev server
+          (<span class="font-mono text-slate-200">127.0.0.1:5173</span>), not as a saved file.
         </p>
       </div>
       <div class="flex flex-wrap gap-3">
@@ -64,7 +75,14 @@
 
     {#if loadError}
       <section class="glass rounded-xl border border-rose-400/30 p-5 text-sm text-rose-200">
-        {loadError} Start `python3 apps/sonic-cli/cli.py serve-api` to feed the browser UI.
+        <p class="font-semibold text-white">Could not load live data</p>
+        <p class="mt-2">
+          {loadError} The Vite dev server proxies <code class="font-mono text-rose-100">/api</code> to
+          <code class="font-mono text-rose-100">127.0.0.1:8991</code>. Start the API with
+          <code class="font-mono text-rose-100">sonic-api</code> (e.g. from
+          <code class="font-mono text-rose-100">./sonic-open</code>) or
+          <code class="font-mono text-rose-100">python3 apps/sonic-cli/cli.py serve-api</code>.
+        </p>
       </section>
     {/if}
 
